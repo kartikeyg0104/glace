@@ -1,0 +1,109 @@
+.seasons {
+  overflow: hidden;
+  background: var(--c-bg-2);
+  border-top: 1px solid var(--c-frost-line);
+  border-bottom: 1px solid var(--c-frost-line);
+}
+
+.seasons__track {
+  display: flex;
+  height: 100svh;
+  width: max-content;
+  will-change: transform;
+}
+
+.seasons__panel {
+  flex: 0 0 auto;
+  width: min(78vw, 1000px);
+  height: 100svh;
+  display: flex;
+  align-items: center;
+  gap: clamp(2rem, 4vw, 4rem);
+  padding: 0 clamp(2rem, 6vw, 6rem);
+}
+
+.seasons__intro {
+  width: min(70vw, 760px);
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.seasons__heading {
+  font-size: clamp(2.6rem, 8vw, 7rem);
+  color: var(--c-ice);
+  margin: 1.4rem 0;
+  line-height: 0.98;
+}
+.seasons__heading em {
+  font-style: italic;
+  color: var(--c-gold);
+}
+.seasons__scrollhint {
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--c-gold);
+}
+
+.seasons__imgwrap {
+  position: relative;
+  flex: 0 0 44%;
+  height: 62vh;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--c-frost-line);
+}
+.seasons__img {
+  position: absolute;
+  inset: 0 -10%;
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(0.2) brightness(0.85);
+  will-change: transform;
+}
+.seasons__roman {
+  position: absolute;
+  left: 1.2rem;
+  top: 0.6rem;
+  font-size: 6rem;
+  color: rgba(231, 238, 244, 0.18);
+  line-height: 1;
+}
+
+.seasons__copy {
+  flex: 1;
+}
+.seasons__season {
+  font-size: 0.78rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--c-gold);
+}
+.seasons__line {
+  font-size: clamp(1.8rem, 4vw, 3.4rem);
+  color: var(--c-ice);
+  margin: 1rem 0 1.4rem;
+  line-height: 1.05;
+}
+.seasons__body {
+  max-width: 42ch;
+  color: var(--c-text-dim);
+}
+
+@media (max-width: 900px) {
+  .seasons__panel {
+    width: 88vw;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  .seasons__imgwrap {
+    width: 100%;
+    flex: 0 0 auto;
+    height: 38vh;
+  }
+  .seasons__roman {
+    font-size: 4rem;
+  }
+}

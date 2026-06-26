@@ -1,0 +1,126 @@
+.exp {
+  padding: clamp(5rem, 12vw, 12rem) var(--gutter);
+  max-width: var(--maxw);
+  margin: 0 auto;
+}
+
+.exp__head {
+  margin-bottom: clamp(3rem, 7vw, 5rem);
+}
+.exp__title {
+  font-size: clamp(2.2rem, 6vw, 5rem);
+  color: var(--c-ice);
+  margin: 1.2rem 0 1.6rem;
+}
+.exp__title em {
+  font-style: italic;
+  color: var(--c-gold);
+}
+.exp__lead {
+  max-width: 48ch;
+  color: var(--c-text-dim);
+}
+
+.exp__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(1rem, 2.5vw, 2rem);
+}
+
+.exp__card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--c-frost-line);
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--c-surface);
+  transition: transform 0.6s var(--ease-out), border-color 0.6s var(--ease-out);
+}
+.exp__card:hover {
+  transform: translateY(-6px);
+  border-color: var(--c-gold-dim);
+}
+
+.exp__media {
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+}
+.exp__img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(0.25) brightness(0.9);
+  transform: scale(1.02);
+  transition: transform 1.1s var(--ease-out), filter 0.6s var(--ease-out);
+}
+.exp__card:hover .exp__img {
+  transform: scale(1.08);
+  filter: grayscale(0) brightness(1);
+}
+
+.exp__info {
+  padding: clamp(1.4rem, 2.5vw, 2.2rem);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.exp__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.exp__no {
+  font-size: 0.74rem;
+  letter-spacing: 0.16em;
+  color: var(--c-text-dim);
+}
+.exp__price {
+  font-family: var(--f-serif);
+  font-size: 1.3rem;
+  color: var(--c-gold);
+}
+.exp__name {
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  color: var(--c-ice);
+  line-height: 1.05;
+}
+.exp__meta {
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-gold-dim);
+  margin: 0.6rem 0 1rem;
+}
+.exp__desc {
+  color: var(--c-text-dim);
+  flex: 1;
+}
+.exp__link {
+  margin-top: 1.6rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--c-ice);
+  transition: gap 0.4s var(--ease-out), color 0.4s var(--ease-out);
+}
+.exp__link span {
+  transition: transform 0.4s var(--ease-out);
+}
+.exp__card:hover .exp__link {
+  color: var(--c-gold);
+  gap: 1rem;
+}
+.exp__card:hover .exp__link span {
+  transform: translateX(4px);
+}
+
+@media (max-width: 900px) {
+  .exp__grid {
+    grid-template-columns: 1fr;
+  }
+}

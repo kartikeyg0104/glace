@@ -1,0 +1,112 @@
+.faq {
+  padding: clamp(5rem, 12vw, 12rem) var(--gutter);
+  max-width: var(--maxw);
+  margin: 0 auto;
+}
+
+.faq__grid {
+  display: grid;
+  grid-template-columns: 0.7fr 1fr;
+  gap: clamp(2rem, 6vw, 6rem);
+  align-items: start;
+}
+
+.faq__intro {
+  position: sticky;
+  top: 16vh;
+}
+.faq__title {
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  color: var(--c-ice);
+  margin: 1.2rem 0 1.6rem;
+  line-height: 1;
+}
+.faq__title em {
+  font-style: italic;
+  color: var(--c-gold);
+}
+.faq__note {
+  max-width: 32ch;
+  color: var(--c-text-dim);
+}
+.faq__note a {
+  color: var(--c-gold);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.faq__item {
+  border-top: 1px solid var(--c-frost-line);
+}
+.faq__item:last-child {
+  border-bottom: 1px solid var(--c-frost-line);
+}
+
+.faq__q {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  text-align: left;
+  padding: 1.6rem 0;
+  font-family: var(--f-serif);
+  font-size: clamp(1.2rem, 2.2vw, 1.7rem);
+  color: var(--c-ice);
+  transition: color 0.4s var(--ease-out);
+}
+.faq__item.is-open .faq__q,
+.faq__q:hover {
+  color: var(--c-gold);
+}
+
+.faq__icon {
+  position: relative;
+  flex: 0 0 18px;
+  width: 18px;
+  height: 18px;
+}
+.faq__icon::before,
+.faq__icon::after {
+  content: '';
+  position: absolute;
+  background: currentColor;
+  transition: transform 0.4s var(--ease-out);
+}
+.faq__icon::before {
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  transform: translateY(-50%);
+}
+.faq__icon::after {
+  left: 50%;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  transform: translateX(-50%);
+}
+.faq__item.is-open .faq__icon::after {
+  transform: translateX(-50%) scaleY(0);
+}
+
+.faq__a {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.5s var(--ease-out);
+}
+.faq__a p {
+  padding-bottom: 1.6rem;
+  max-width: 60ch;
+  color: var(--c-text-dim);
+}
+
+@media (max-width: 900px) {
+  .faq__grid {
+    grid-template-columns: 1fr;
+  }
+  .faq__intro {
+    position: static;
+  }
+}

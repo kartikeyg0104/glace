@@ -1,0 +1,39 @@
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: var(--c-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.loader__word {
+  overflow: hidden;
+  font-size: clamp(3rem, 12vw, 11rem);
+  letter-spacing: 0.04em;
+  color: var(--c-ice);
+}
+.loader__word span {
+  display: block;
+  transform: translateY(110%);
+}
+
+.loader__count {
+  position: absolute;
+  right: var(--gutter);
+  bottom: clamp(1.5rem, 4vw, 3rem);
+  display: flex;
+  align-items: baseline;
+  gap: 0.2em;
+  font-family: var(--f-sans);
+  font-weight: 300;
+  font-size: clamp(2rem, 6vw, 4rem);
+  color: var(--c-ice-dim);
+  font-variant-numeric: tabular-nums;
+}
+.loader__pct {
+  font-size: 0.4em;
+  color: var(--c-gold);
+}

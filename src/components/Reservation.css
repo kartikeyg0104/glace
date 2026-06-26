@@ -1,0 +1,130 @@
+.reserve {
+  padding: clamp(5rem, 12vw, 12rem) var(--gutter);
+  max-width: var(--maxw);
+  margin: 0 auto;
+}
+
+.reserve__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 6vw, 6rem);
+  align-items: center;
+}
+
+.reserve__title {
+  font-size: clamp(2.4rem, 6vw, 5rem);
+  color: var(--c-ice);
+  margin: 1.2rem 0 1.8rem;
+}
+.reserve__title em {
+  font-style: italic;
+  color: var(--c-gold);
+}
+
+.reserve__note {
+  max-width: 44ch;
+  color: var(--c-text-dim);
+}
+
+.reserve__detail {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 2.4rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  color: var(--c-ice-dim);
+}
+
+.reserve__card {
+  border-radius: 6px;
+  padding: clamp(1.6rem, 3vw, 2.8rem);
+}
+
+.reserve__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+.reserve__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.4rem;
+}
+.reserve__form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.reserve__form label span {
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--c-text-dim);
+}
+.reserve__form input,
+.reserve__form select {
+  font-family: var(--f-sans);
+  font-size: 1rem;
+  color: var(--c-ice);
+  background: rgba(7, 11, 17, 0.5);
+  border: 1px solid var(--c-frost-line);
+  border-radius: 4px;
+  padding: 0.9rem 1rem;
+  outline: none;
+  transition: border-color 0.4s var(--ease-out);
+  cursor: none;
+}
+.reserve__form input:focus,
+.reserve__form select:focus {
+  border-color: var(--c-gold);
+}
+.reserve__form input::placeholder {
+  color: var(--c-text-dim);
+}
+
+.reserve__submit {
+  margin-top: 0.6rem;
+  padding: 1.1rem;
+  background: var(--c-gold);
+  color: var(--c-bg);
+  border-radius: 999px;
+  font-size: 0.82rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition: transform 0.4s var(--ease-out), background 0.4s var(--ease-out);
+}
+.reserve__submit:hover {
+  transform: translateY(-2px);
+  background: var(--c-ice);
+}
+
+.reserve__done {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: center;
+  padding: 1.5rem 0;
+}
+.reserve__done h3 {
+  font-size: 2.2rem;
+  color: var(--c-gold);
+}
+.reserve__done p {
+  color: var(--c-text-dim);
+  max-width: 38ch;
+  margin: 0 auto;
+}
+.reserve__again {
+  margin-top: 0.8rem;
+  color: var(--c-ice);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 900px) {
+  .reserve__inner {
+    grid-template-columns: 1fr;
+  }
+}

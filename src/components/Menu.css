@@ -1,0 +1,118 @@
+.menu {
+  padding: clamp(5rem, 12vw, 12rem) var(--gutter);
+  max-width: var(--maxw);
+  margin: 0 auto;
+}
+
+.menu__head {
+  margin-bottom: clamp(3rem, 7vw, 6rem);
+}
+.menu__title {
+  font-size: clamp(2.2rem, 6vw, 5rem);
+  color: var(--c-ice);
+  margin-top: 1.2rem;
+  max-width: 16ch;
+}
+.menu__title em {
+  font-style: italic;
+  color: var(--c-gold);
+}
+
+.menu__body {
+  display: grid;
+  grid-template-columns: 1fr 0.5fr;
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: start;
+}
+
+.menu__list {
+  list-style: none;
+}
+
+.menu__row {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1.5rem 2rem;
+  align-items: baseline;
+  padding: clamp(1.6rem, 3vw, 2.6rem) 0;
+  border-top: 1px solid var(--c-frost-line);
+  transition: padding-left 0.5s var(--ease-out);
+}
+.menu__row:last-child {
+  border-bottom: 1px solid var(--c-frost-line);
+}
+.menu__row:hover {
+  padding-left: 1.2rem;
+}
+
+.menu__no {
+  font-family: var(--f-sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  color: var(--c-gold);
+}
+.menu__name {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  color: var(--c-ice);
+  line-height: 1.05;
+  transition: color 0.4s var(--ease-out);
+}
+.menu__row:hover .menu__name {
+  color: var(--c-gold);
+}
+.menu__desc {
+  margin-top: 0.6rem;
+  color: var(--c-text-dim);
+  max-width: 50ch;
+}
+.menu__tag {
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--c-text-dim);
+  border: 1px solid var(--c-frost-line);
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  white-space: nowrap;
+}
+
+.menu__preview {
+  position: sticky;
+  top: 18vh;
+}
+.menu__preview-frame {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid var(--c-frost-line);
+}
+.menu__preview-img {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transform: scale(1.08);
+  transition: opacity 0.7s var(--ease-out), transform 1.2s var(--ease-out);
+}
+.menu__preview-img.is-active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@media (max-width: 900px) {
+  .menu__body {
+    grid-template-columns: 1fr;
+  }
+  .menu__preview {
+    display: none;
+  }
+  .menu__row {
+    grid-template-columns: auto 1fr;
+  }
+  .menu__tag {
+    grid-column: 2;
+    justify-self: start;
+  }
+}

@@ -1,0 +1,81 @@
+.press {
+  padding: clamp(5rem, 12vw, 11rem) var(--gutter);
+  max-width: var(--maxw);
+  margin: 0 auto;
+}
+
+.press__head {
+  text-align: center;
+  margin-bottom: clamp(3rem, 6vw, 5rem);
+}
+.press__title {
+  font-size: clamp(2.2rem, 6vw, 5rem);
+  color: var(--c-ice);
+  margin-top: 1rem;
+}
+.press__title em {
+  font-style: italic;
+  color: var(--c-gold);
+}
+
+.press__stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  padding: clamp(2rem, 4vw, 3.5rem) 0;
+  border-top: 1px solid var(--c-frost-line);
+  border-bottom: 1px solid var(--c-frost-line);
+  text-align: center;
+}
+.press__stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.press__num {
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  color: var(--c-gold);
+  line-height: 1;
+}
+.press__num i {
+  font-style: normal;
+  font-size: 0.4em;
+  color: var(--c-ice-dim);
+  margin-left: 0.1em;
+}
+.press__label {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--c-text-dim);
+}
+
+.press__quotes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.5rem, 3vw, 3rem);
+  margin-top: clamp(3rem, 6vw, 5rem);
+}
+.press__quote blockquote {
+  font-size: clamp(1.3rem, 2vw, 1.7rem);
+  line-height: 1.3;
+  color: var(--c-ice);
+  font-weight: 300;
+}
+.press__quote figcaption {
+  margin-top: 1.2rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--c-gold);
+}
+
+@media (max-width: 900px) {
+  .press__stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 1rem;
+  }
+  .press__quotes {
+    grid-template-columns: 1fr;
+  }
+}

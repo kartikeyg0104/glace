@@ -1,0 +1,72 @@
+.chef {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  padding: clamp(4rem, 10vw, 8rem) var(--gutter);
+  background: var(--c-bg-2);
+  border-top: 1px solid var(--c-frost-line);
+  border-bottom: 1px solid var(--c-frost-line);
+  overflow: hidden;
+}
+
+.chef__inner {
+  width: 100%;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.62fr 1fr;
+  gap: clamp(2rem, 6vw, 6rem);
+  align-items: center;
+}
+
+.chef__portrait-wrap {
+  position: relative;
+}
+.chef__portrait {
+  aspect-ratio: 3 / 4;
+  border-radius: 4px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  border: 1px solid var(--c-frost-line);
+  will-change: transform, clip-path;
+}
+.chef__name {
+  position: absolute;
+  left: 1.2rem;
+  bottom: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.9rem 1.2rem;
+}
+.chef__name .display {
+  font-size: 1.5rem;
+  color: var(--c-ice);
+}
+.chef__role {
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--c-gold);
+}
+
+.chef__quote {
+  font-size: clamp(1.8rem, 4.2vw, 3.8rem);
+  line-height: 1.2;
+  color: var(--c-ice);
+}
+.chef__quote .word {
+  display: inline;
+}
+
+@media (max-width: 900px) {
+  .chef__inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .chef__portrait {
+    aspect-ratio: 4 / 3;
+    max-height: 50vh;
+  }
+}

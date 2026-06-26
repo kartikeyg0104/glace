@@ -1,0 +1,37 @@
+.marquee {
+  overflow: hidden;
+  padding: clamp(2.5rem, 6vw, 5rem) 0;
+  border-top: 1px solid var(--c-frost-line);
+  border-bottom: 1px solid var(--c-frost-line);
+  background: var(--c-bg-2);
+}
+
+.marquee__track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+}
+
+.marquee__group {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.marquee__item {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--f-serif);
+  font-weight: 300;
+  font-size: clamp(2.4rem, 7vw, 6rem);
+  letter-spacing: 0.01em;
+  color: var(--c-ice);
+  padding: 0 1.4rem;
+  white-space: nowrap;
+}
+
+.marquee__dot {
+  color: var(--c-gold);
+  font-size: 0.32em;
+  margin-left: 1.8rem;
+  font-style: normal;
+}
