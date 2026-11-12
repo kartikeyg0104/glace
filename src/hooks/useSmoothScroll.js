@@ -12,6 +12,7 @@ gsap.registerPlugin(ScrollTrigger)
  */
 export function useSmoothScroll() {
   useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -31,7 +32,7 @@ export function useSmoothScroll() {
     return () => {
       gsap.ticker.remove(raf)
       lenis.destroy()
-      window.__lenis = null
+      if (window.__lenis === lenis) window.__lenis = null
     }
   }, [])
 }
